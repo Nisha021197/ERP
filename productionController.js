@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const db = require('./db');
 
 const STAGE_ORDER = ['planned','material_check','in_progress','assembly','quality_check','packing','completed'];
 

@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const db = require('./db');
 
 exports.getSummary = async (req, res) => {
   try {

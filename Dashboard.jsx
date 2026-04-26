@@ -25,7 +25,7 @@ export default function Dashboard() {
   if (error) return <ErrorMsg msg={`API Error: ${error} — Make sure the backend is running on port 5000`} />;
 
   const stageCounts = {};
-  data.recent_production.forEach(p => { stageCounts[p.status] = (stageCounts[p.status] || 0) + 1; });
+(data.recent_production || []).forEach(p => { stageCounts[p.status] = (stageCounts[p.status] || 0) + 1; });
   const pieData = Object.entries(stageCounts).map(([name, value]) => ({ name, value }));
 
   return (

@@ -1,66 +1,83 @@
 const express = require('express');
-
-// Controllers
-const dashCtrl = require('./dashboardController');
-const supCtrl = require('./supplierController');
-const matCtrl = require('./materialController');
-const poCtrl = require('./purchaseController');
-const prodCtrl = require('./productController');
-const prodOrderCtrl = require('./productionController');
-const qcCtrl = require('./qualityController');
-const shipCtrl = require('./shipmentController');
-
 const router = express.Router();
 
+const dashboardController = require('./dashboardController');
+const supplierController = require('./supplierController');
+const materialController = require('./materialController');
+const purchaseController = require('./purchaseController');
+const productController = require('./productController');
+const productionController = require('./productionController');
+const qualityController = require('./qualityController');
+const shipmentController = require('./shipmentController');
+const authController = require('./authController');
+const employeeController = require('./employeeController');
+const userRightsController = require('./userRightsController');
+
+// Auth
+router.post('/auth/login', authController.login);
+router.post('/auth/change-password', authController.changePassword);
+
 // Dashboard
-router.get('/dashboard', dashCtrl.getSummary);
+router.get('/dashboard', dashboardController.getSummary);
 
 // Suppliers
-router.get('/suppliers', supCtrl.getAll);
-router.get('/suppliers/:id', supCtrl.getOne);
-router.post('/suppliers', supCtrl.create);
-router.put('/suppliers/:id', supCtrl.update);
-router.delete('/suppliers/:id', supCtrl.remove);
+router.get('/suppliers', supplierController.getAll);
+router.get('/suppliers/:id', supplierController.getOne);
+router.post('/suppliers', supplierController.create);
+router.put('/suppliers/:id', supplierController.update);
+router.delete('/suppliers/:id', supplierController.remove);
 
-// Raw Materials
-router.get('/materials', matCtrl.getAll);
-router.get('/materials/:id', matCtrl.getOne);
-router.post('/materials', matCtrl.create);
-router.put('/materials/:id', matCtrl.update);
-router.post('/materials/:id/adjust-stock', matCtrl.adjustStock);
-router.delete('/materials/:id', matCtrl.remove);
+// Materials
+router.get('/materials', materialController.getAll);
+router.get('/materials/:id', materialController.getOne);
+router.post('/materials', materialController.create);
+router.put('/materials/:id', materialController.update);
+router.post('/materials/:id/adjust-stock', materialController.adjustStock);
+router.delete('/materials/:id', materialController.remove);
 
 // Purchase Orders
-router.get('/purchase-orders', poCtrl.getAll);
-router.get('/purchase-orders/:id', poCtrl.getOne);
-router.post('/purchase-orders', poCtrl.create);
-router.patch('/purchase-orders/:id/status', poCtrl.updateStatus);
-router.delete('/purchase-orders/:id', poCtrl.remove);
+router.get('/purchase-orders', purchaseController.getAll);
+router.get('/purchase-orders/:id', purchaseController.getOne);
+router.post('/purchase-orders', purchaseController.create);
+router.patch('/purchase-orders/:id/status', purchaseController.updateStatus);
+router.delete('/purchase-orders/:id', purchaseController.remove);
 
-// Products (Finished Goods)
-router.get('/products', prodCtrl.getAll);
-router.get('/products/:id', prodCtrl.getOne);
-router.post('/products', prodCtrl.create);
-router.put('/products/:id', prodCtrl.update);
-router.get('/products/check-feasibility', prodCtrl.checkFeasibility);
-router.delete('/products/:id', prodCtrl.remove);
+// Products
+router.get('/products', productController.getAll);
+router.get('/products/:id', productController.getOne);
+router.post('/products', productController.create);
+router.put('/products/:id', productController.update);
+router.delete('/products/:id', productController.remove);
 
 // Production Orders
-router.get('/production-orders', prodOrderCtrl.getAll);
-router.get('/production-orders/:id', prodOrderCtrl.getOne);
-router.post('/production-orders', prodOrderCtrl.create);
-router.patch('/production-orders/:id/advance', prodOrderCtrl.advanceStage);
-router.delete('/production-orders/:id', prodOrderCtrl.remove);
+router.get('/production-orders', productionController.getAll);
+router.get('/production-orders/:id', productionController.getOne);
+router.post('/production-orders', productionController.create);
+router.patch('/production-orders/:id/advance', productionController.advanceStage);
+router.delete('/production-orders/:id', productionController.remove);
 
-// Quality Checks
-router.get('/quality-checks', qcCtrl.getAll);
-router.get('/quality-checks/stats', qcCtrl.getStats);
-router.post('/quality-checks', qcCtrl.create);
+// Quality
+router.get('/quality-checks', qualityController.getAll);
+router.get('/quality-checks/stats', qualityController.getStats);
+router.post('/quality-checks', qualityController.create);
 
 // Shipments
-router.get('/shipments', shipCtrl.getAll);
-router.get('/shipments/:id', shipCtrl.getOne);
-router.post('/shipments', shipCtrl.create);
-router.patch('/shipments/:id/status', shipCtrl.updateStatus);
+router.get('/shipments', shipmentController.getAll);
+router.get('/shipments/:id', shipmentController.getOne);
+router.post('/shipments', shipmentController.create);
+router.patch('/shipments/:id/status', shipmentController.updateStatus);
+
+// Employees
+router.get('/employees', employeeController.getAll);
+router.post('/employees', employeeController.create);
+router.put('/employees/:id', employeeController.update);
+router.delete('/employees/:id', employeeController.remove);
+
+// User Rights
+router.get('/user-rights', userRightsController.getRights);
+router.post('/user-rights/update', userRightsController.updateRights);
+router.post('/user-rights/reset', userRightsController.resetDefaults);
 
 module.exports = router;
+
+

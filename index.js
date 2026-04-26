@@ -1,14 +1,14 @@
 const express = require('express');
 
 // Controllers
-const dashCtrl = require('../controllers/dashboardController');
-const supCtrl = require('../controllers/supplierController');
-const matCtrl = require('../controllers/materialController');
-const poCtrl = require('../controllers/purchaseController');
-const prodCtrl = require('../controllers/productController');
-const prodOrderCtrl = require('../controllers/productionController');
-const qcCtrl = require('../controllers/qualityController');
-const shipCtrl = require('../controllers/shipmentController');
+const dashCtrl = require('./dashboardController');
+const supCtrl = require('./supplierController');
+const matCtrl = require('./materialController');
+const poCtrl = require('./purchaseController');
+const prodCtrl = require('./productController');
+const prodOrderCtrl = require('./productionController');
+const qcCtrl = require('./qualityController');
+const shipCtrl = require('./shipmentController');
 
 const router = express.Router();
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { dashboard } from '../services/api';
-import { StatCard, Card, Badge, Loading, ErrorMsg } from '../components/UI';
+import { dashboard } from './api';
+import { StatCard, Card, Badge, Loading, ErrorMsg } from './UI';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 const STAGE_COLORS = {

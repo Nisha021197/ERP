@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { shipments as shipApi, productionOrders as prodApi } from '../services/api';
-import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from '../components/UI';
+import { shipments as shipApi, productionOrders as prodApi } from './api';
+import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from './UI';
 
 const STATUSES = ['packing', 'ready', 'dispatched', 'in_transit', 'delivered', 'returned'];
 const EMPTY = { production_order_id: '', customer_name: '', customer_address: '', quantity: 1, carrier: '', notes: '' };

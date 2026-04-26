@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { materials as matApi, suppliers as supApi } from '../services/api';
-import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from '../components/UI';
+import { materials as matApi, suppliers as supApi } from './api';
+import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from './UI';
 
 const EMPTY = { name: '', sku: '', category: '', unit: 'kg', current_stock: 0, min_stock_level: 0, unit_cost: 0, supplier_id: '', description: '' };
 

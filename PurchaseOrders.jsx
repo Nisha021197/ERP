@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { purchaseOrders as poApi, suppliers as supApi, materials as matApi } from '../services/api';
-import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from '../components/UI';
+import { purchaseOrders as poApi, suppliers as supApi, materials as matApi } from './api';
+import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from './UI';
 
 const STATUSES = ['draft', 'sent', 'confirmed', 'received', 'cancelled'];
 const EMPTY_FORM = { supplier_id: '', order_date: new Date().toISOString().slice(0, 10), expected_delivery: '', notes: '', items: [] };

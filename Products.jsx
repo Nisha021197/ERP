@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { products as prodApi, materials as matApi } from '../services/api';
-import { Card, Modal, Input, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from '../components/UI';
+import { products as prodApi, materials as matApi } from './api';
+import { Card, Modal, Input, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from './UI';
 
 const EMPTY = { name: '', sku: '', category: '', description: '', unit_price: 0, bom: [] };
 const EMPTY_BOM = { material_id: '', quantity_required: 1, unit: 'kg', notes: '' };

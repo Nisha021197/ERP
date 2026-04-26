@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import Dashboard from './pages/Dashboard';
-import Suppliers from './pages/Suppliers';
-import Materials from './pages/Materials';
-import PurchaseOrders from './pages/PurchaseOrders';
-import Products from './pages/Products';
-import ProductionOrders from './pages/ProductionOrders';
-import QualityChecks from './pages/QualityChecks';
-import Shipments from './pages/Shipments';
+import Sidebar from './Sidebar';
+import Dashboard from './Dashboard';
+import Suppliers from './Suppliers';
+import Materials from './Materials';
+import PurchaseOrders from './PurchaseOrders';
+import Products from './Products';
+import ProductionOrders from './ProductionOrders';
+import QualityChecks from './QualityChecks';
+import Shipments from './Shipments';
 
 export default function App() {
   return (

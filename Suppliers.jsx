@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { suppliers as api } from '../services/api';
-import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from '../components/UI';
+import { suppliers as api } from './api';
+import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from './UI';
 
 const EMPTY = { name: '', contact_person: '', email: '', phone: '', address: '', rating: 5, status: 'active' };
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { quality as qcApi, productionOrders as prodApi } from '../services/api';
-import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, StatCard, Loading, ErrorMsg } from '../components/UI';
+import { quality as qcApi, productionOrders as prodApi } from './api';
+import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, StatCard, Loading, ErrorMsg } from './UI';
 
 const EMPTY = { production_order_id: '', inspector: '', result: 'pass', defects_found: '', actions_taken: '', approved_qty: 0, rejected_qty: 0, notes: '' };
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { productionOrders as api, products as prodApi } from '../services/api';
-import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from '../components/UI';
+import { productionOrders as api, products as prodApi } from './api';
+import { Card, Modal, Input, Select, Button, Table, Tr, Td, Badge, SectionHeader, Loading, ErrorMsg } from './UI';
 
 const STAGES = ['planned', 'material_check', 'in_progress', 'assembly', 'quality_check', 'packing', 'completed'];
 const STAGE_LABELS = {
